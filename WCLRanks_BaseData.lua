@@ -987,6 +987,16 @@ WCLRanks_BaseData = {
 			['name']='奧杜亞',
 			['encounters']='14'
 		}
+		[1018]={
+			['id']='1018',
+			['name']='十字軍試煉',
+			['encounters']='4'
+		}
+		[1019]={
+			['id']='1019',
+			['name']='奧妮克希亞',
+			['encounters']='1'
+		}
 	},
 	['zoneEncounters']={
 		[1014]={
@@ -1201,5 +1211,28 @@ WCLRanks_BaseData = {
 				['name']='『觀察者』艾爾加隆',--"Algalon the Observer"
 			},
 		},
+		[1018]={
+			{
+				['id']=629,
+				['name']='北裂境巨獸',--"The Northrend Beasts"
+			},
+			{
+				['id']=633,
+				['name']='賈拉克瑟斯領主',--"Lord Jaraxxus"
+			},
+			{
+				['id']=641,
+				['name']='華爾琪雙子',--"Twin Val'kyr"
+			},
+			{
+				['id']=645,
+				['name']='阿努巴拉克',--"Anub'arak"
+			},
+		},
+		[1019]={
+			{
+				['id']=101084,
+				['name']='奧妮克希亞',--"Onyxia"
+			},
 	},
 };
