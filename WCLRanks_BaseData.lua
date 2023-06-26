@@ -986,17 +986,17 @@ WCLRanks_BaseData = {
 			['id']='1017',
 			['name']='奧杜亞',
 			['encounters']='14'
-		}
+		},
 		[1018]={
 			['id']='1018',
 			['name']='十字軍試煉',
 			['encounters']='4'
-		}
+		},
 		[1019]={
 			['id']='1019',
 			['name']='奧妮克希亞',
 			['encounters']='1'
-		}
+		},
 	},
 	['zoneEncounters']={
 		[1014]={
@@ -1234,5 +1234,6 @@ WCLRanks_BaseData = {
 				['id']=101084,
 				['name']='奧妮克希亞',--"Onyxia"
 			},
+		},
 	},
 };
