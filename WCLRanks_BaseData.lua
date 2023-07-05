@@ -16,6 +16,8 @@ WCLRanks_BaseData = {
 				['Lichborne']={['id']='4',['name']='Lichborne',['slug']='Lichborne',['icon']='Interface/AddOns/WCLRanks/Icons/classes:%w:%h:0:0:256:512:72:108:144:180'},
 				[5]={['id']='5',['name']='Runeblade',['slug']='Runeblade',['icon']='Interface/AddOns/WCLRanks/Icons/classes:%w:%h:0:0:256:512:36:72:144:180'},
 				['Runeblade']={['id']='5',['name']='Runeblade',['slug']='Runeblade',['icon']='Interface/AddOns/WCLRanks/Icons/classes:%w:%h:0:0:256:512:36:72:144:180'}
+				[6]={['id']='6',['name']='BloodDPS',['slug']='BloodDPS',['icon']='Interface/AddOns/WCLRanks/Icons/classes:%w:%h:0:0:256:512:36:72:144:180'},
+				['BloodDPS']={['id']='6',['name']='BloodDPS',['slug']='BloodDPS',['icon']='Interface/AddOns/WCLRanks/Icons/classes:%w:%h:0:0:256:512:36:72:144:180'},
 			}
 		},
 		['DeathKnight']={
