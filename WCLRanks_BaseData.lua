@@ -981,25 +981,26 @@ WCLRanks_BaseData = {
 		},
 		[1016]={
 			['id']='1016',
-			['name']='亞夏梵穹殿',
+			['name']='Vault of Archavon',
 			['encounters']='1'
 		},
 		[1017]={
 			['id']='1017',
-			['name']='奧杜亞',
+			['name']='Ulduar',
 			['encounters']='14'
 		},
 		[1018]={
 			['id']='1018',
-			['name']='十字軍試煉',
+			['name']='Trial of the Crusader',
 			['encounters']='4'
 		},
 		[1019]={
 			['id']='1019',
-			['name']='奧妮克希亞',
+			['name']='Onyxia',
 			['encounters']='1'
 		},
 	},
+
 	['zoneEncounters']={
 		[1014]={
 			{
@@ -1012,133 +1013,162 @@ WCLRanks_BaseData = {
 				['name']='Utgarde Pinnacle',
 				['journalID']=0
 			},
-{['id']=100019,
-['name']='The Nexus',
-['journalID']=0},
-{['id']=100020,
-['name']='The Oculus',
-['journalID']=0},
-{['id']=100021,
-['name']='The Culling of Stratholme',
-['journalID']=0},
-{['id']=100022,
-['name']='Halls of Stone',
-['journalID']=0},
-{['id']=100023,
-['name']='Drak\'Tharon Keep',
-['journalID']=0},
-{['id']=100024,
-['name']='Azjol-Nerub',
-['journalID']=0},
-{['id']=100025,
-['name']='Halls of Lightning',
-['journalID']=0},
-{['id']=100026,
-['name']='Gundrak',
-['journalID']=0},
-{['id']=100027,
-['name']='Violet Hold',
-['journalID']=0},
-{['id']=100028,
-['name']='Ahn\'kahet: The Old Kingdom',
-['journalID']=0},
-{['id']=100029,
-['name']='Forge of Souls',
-['journalID']=0},
-{['id']=100030,
-['name']='Trial of the Champion',
-['journalID']=0},
-{['id']=100031,
-['name']='Pit of Saron',
-['journalID']=0},
-{['id']=100032,
-['name']='Halls of Reflection',
-['journalID']=0}},
+			{
+				['id']=100019,
+				['name']='The Nexus',
+				['journalID']=0
+			},
+			{
+				['id']=100020,
+				['name']='The Oculus',
+				['journalID']=0
+			},
+			{
+				['id']=100021,
+				['name']='The Culling of Stratholme',
+				['journalID']=0
+			},
+			{
+				['id']=100022,
+				['name']='Halls of Stone',
+				['journalID']=0
+			},
+			{
+				['id']=100023,
+				['name']='Drak\'Tharon Keep',
+				['journalID']=0
+			},
+			{
+				['id']=100024,
+				['name']='Azjol-Nerub',
+				['journalID']=0
+			},
+			{
+				['id']=100025,
+				['name']='Halls of Lightning',
+				['journalID']=0
+			},
+			{
+				['id']=100026,
+				['name']='Gundrak',
+				['journalID']=0
+			},
+			{
+				['id']=100027,
+				['name']='Violet Hold',
+				['journalID']=0
+			},
+			{
+				['id']=100028,
+				['name']='Ahn\'kahet: The Old Kingdom',
+				['journalID']=0
+			},
+			{
+				['id']=100029,
+				['name']='Forge of Souls',
+				['journalID']=0
+			},
+			{
+				['id']=100030,
+				['name']='Trial of the Champion',
+				['journalID']=0
+			},
+			{
+				['id']=100031,
+				['name']='Pit of Saron',
+				['journalID']=0
+			},
+			{
+				['id']=100032,
+				['name']='Halls of Reflection',
+				['journalID']=0
+			}
+		},
 
 		[1015]={
 			{
 				['id']=734,
-				['name']='瑪里苟斯',
+				['name']='Malygos',
 				['journalID']=0
 			},
 			{
 				['id']=742,
-				['name']='撒爾薩里安',
+				['name']='Sartharion',
 				['journalID']=0
 			},
 			{
 				['id']=101107,
-				['name']='阿努比瑞克漢',--'Anub\'Rekhan',
+				['name']='Anub\'Rekhan',
 				['journalID']=0
 			},
 			{
 				['id']=101108,
-				['name']='古魯斯',--'Gluth',
+				['name']='Gluth',
 				['journalID']=0
 			},
 			{
 				['id']=101109,
-				['name']='收割者高希',--'Gothik the Harvester',
+				['name']='Gothik the Harvester',
 				['journalID']=0
 			},
 			{
 				['id']=101110,
-				['name']='大寡婦費琳娜',--'Grand Widow Faerlina',
+				['name']='Grand Widow Faerlina',
 				['journalID']=0
 			},
 			{
 				['id']=101111,
-				['name']='葛羅巴斯',--'Grobbulus',
+				['name']='Grobbulus',
 				['journalID']=0
 			},
 			{
 				['id']=101112,
-				['name']='骯髒者海根',--'Heigan the Unclean',
+				['name']='Heigan the Unclean',
 				['journalID']=0
 			},
 			{
 				['id']=101113,
-				['name']='講師拉祖維斯',--'Instructor Razuvious',
+				['name']='Instructor Razuvious',
 				['journalID']=0
 			},
 			{
 				['id']=101114,
-				['name']='科爾蘇加德',--'Kel\'Thuzad',
+				['name']='Kel\'Thuzad',
 				['journalID']=0
 			},
 			{
 				['id']=101115,
-				['name']='洛斯伯',--'Loatheb',
+				['name']='Loatheb',
 				['journalID']=0
 			},
 			{
 				['id']=101116,
-				['name']='梅克絲娜',--'Maexxna',
+				['name']='Maexxna',
 				['journalID']=0
 			},
 			{
 				['id']=101117,
-				['name']='瘟疫者諾斯',--'Noth the Plaguebringer',
+				['name']='Noth the Plaguebringer',
 				['journalID']=0
 			},
 			{
 				['id']=101118,
-				['name']='縫補者',--'Patchwerk',
+				['name']='Patchwerk',
 				['journalID']=0
 			},
 			{
 				['id']=101119,
-				['name']='薩菲隆',--'Sapphiron',
+				['name']='Sapphiron',
 				['journalID']=0
 			},
 			{
 				['id']=101120,
-				['name']='泰迪斯',--'Thaddius',
+				['name']='Thaddius',
 				['journalID']=0
 			},
 			{
 				['id']=101121,
-				['name']='四騎士',--'The Four Horsemen',
+				['name']='The Four Horsemen',
 				['journalID']=0
 			},
 		},
@@ -1146,95 +1176,103 @@ WCLRanks_BaseData = {
 		[1016]={
 			{
 				['id']=772,
-				['name']='『石之看守者』亞夏梵',
+				['name']='Archavon the Stone Watcher',
 				['journalID']=0
 			},
 			{
 				['id']=774,
-				['name']='『風暴看守者』艾瑪隆',
+				['name']='Emalon the Storm Watcher',
+				['journalID']=0
+			},
+			{
+				['id']=776,
+				['name']='Koralon the Flame Watcher',
 				['journalID']=0
 			}
 		},
+
 		[1017]={
 			{
 				['id']=744,
-				['name']='烈焰戰輪',--"Flame Leviathan"
+				['name']='Flame Leviathan',
 			},
 			{
 				['id']=745,
-				['name']='『火爐之主』伊格尼司',--"Ignis the Furnace Master"
+				['name']='Ignis the Furnace Master',
 			},
 			{
 				['id']=746,
-				['name']='銳鱗',--"Razorscale"
+				['name']='Razorscale',
 			},
 			{
 				['id']=747,
-				['name']='XT-002拆解者',--"XT-002 Deconstructor"
+				['name']='XT-002 Deconstructor',
 			},
 			{
 				['id']=748,
-				['name']='鐵之議會',--"The Assembly of Iron"
+				['name']='The Assembly of Iron',
 			},
 			{
 				['id']=749,
-				['name']='柯洛剛恩',--"Kologarn"
+				['name']='Kologarn',
 			},
 			{
 				['id']=750,
-				['name']='奧芮雅',--"Auriaya"
+				['name']='Auriaya',
 			},
 			{
 				['id']=751,
-				['name']='霍迪爾',--"Hodir"
+				['name']='Hodir',
 			},
 			{
 				['id']=752,
-				['name']='索林姆',--"Thorim"
+				['name']='Thorim',
 			},
 			{
 				['id']=753,
-				['name']='芙蕾雅',--"Freya"
+				['name']='Freya',
 			},
 			{
 				['id']=754,
-				['name']='彌米倫',--"Mimiron"
+				['name']='Mimiron',
 			},
 			{
 				['id']=755,
-				['name']='威札斯將軍',--"General Vezax"
+				['name']='General Vezax',
 			},
 			{
 				['id']=756,
-				['name']='尤格薩倫',--"Yogg-Saron"
+				['name']='Yogg-Saron',
 			},
 			{
 				['id']=757,
-				['name']='『觀察者』艾爾加隆',--"Algalon the Observer"
+				['name']='Algalon the Observer',
 			},
 		},
+
 		[1018]={
 			{
 				['id']=629,
-				['name']='北裂境巨獸',--"The Northrend Beasts"
+				['name']='The Northrend Beasts',
 			},
 			{
 				['id']=633,
-				['name']='賈拉克瑟斯領主',--"Lord Jaraxxus"
+				['name']='Lord Jaraxxus',
 			},
 			{
 				['id']=641,
-				['name']='華爾琪雙子',--"Twin Val'kyr"
+				['name']='Twin Val\'kyr',
 			},
 			{
 				['id']=645,
-				['name']='阿努巴拉克',--"Anub'arak"
+				['name']='Anub\'arak',
 			},
 		},
+
 		[1019]={
 			{
 				['id']=101084,
-				['name']='奧妮克希亞',--"Onyxia"
+				['name']='Onyxia',
 			},
 		},
 	},
