@@ -1,8 +1,8 @@
 ## Interface: 30402
 ## Interface-Wrath: 30402
-## Title: WCLRanks-Gehennas
-## Version: 3.1.20230722
-## Author: acelan@acelan.idv.tw
+## Title: WCLRanks: Gehennas
+## Version: 1.0.0
+## Author: Envv
 ## DefaultState: enabled
 ## SavedVariables: WCLRanksGehennasDB
 
@@ -11,5 +11,5 @@ Libs\AceTimer-3.0\AceTimer-3.0.xml
 Libs\AceAddon-3.0\AceAddon-3.0.xml
 Data\WCLRanks.xml
 Locale\enUS.lua
-WCLRanks.lua
-WCLRanks_BaseData.lua
+WCLRanksGehennas.lua
+WCLRanksGehennas_BaseData.lua

@@ -1,6 +1,6 @@
 local _, L = ...;
 
-WCLRanks = CreateFrame("Frame", "WCLRanks", UIParent);
+WCLRanksGehennas = CreateFrame("Frame", "WCLRanksGehennas", UIParent);
 
 local function dump(o)
    if type(o) == 'table' then
@@ -20,7 +20,7 @@ local function dump(o)
    end
 end
 
-function WCLRanks:Init()
+function WCLRanksGehennas:Init()
   self.debug = false;
   self.defaults = {
     chatExtension = true,
@@ -100,16 +100,16 @@ function WCLRanks:Init()
   self:RegisterEvent("PLAYER_ENTERING_WORLD");
   --self:RegisterEvent("UPDATE_MOUSEOVER_UNIT");
   GameTooltip:HookScript("OnTooltipSetUnit", function(tooltip, ...)
-    WCLRanks:OnTooltipSetUnit(tooltip, ...);
+    WCLRanksGehennas:OnTooltipSetUnit(tooltip, ...);
   end);
   GameTooltip:HookScript("OnShow", function(tooltip, ...)
-    WCLRanks:OnTooltipShow(tooltip, ...);
+    WCLRanksGehennas:OnTooltipShow(tooltip, ...);
   end);
 end
 
-function WCLRanks:InitOptions()
+function WCLRanksGehennas:InitOptions()
   self.optionsPanel = CreateFrame("Frame");
-  self.optionsPanel.name = "WCLRanks";
+  self.optionsPanel.name = "WCLRanksGehennas";
   InterfaceOptions_AddCategory(self.optionsPanel);
   pos_y = -20
   -- Chat integration
@@ -265,33 +265,33 @@ function WCLRanks:InitOptions()
 	pos_y = pos_y - 20
 end
 
-function WCLRanks:LogOutput(...)
-  print("|cffff0000WCLRanks|r", ...);
+function WCLRanksGehennas:LogOutput(...)
+  print("|cffff0000WCLRanksGehennas|r", ...);
 end
 
-function WCLRanks:LogDebug(...)
+function WCLRanksGehennas:LogDebug(...)
   if self.debug then
-    print("|cffff0000WCLRanks|r", "|cffffff00Debug|r", ...);
+    print("|cffff0000WCLRanksGehennas|r", "|cffffff00Debug|r", ...);
   end
 end
 
-function WCLRanks:AddPlayerInfoToTooltip(targetName)
+function WCLRanksGehennas:AddPlayerInfoToTooltip(targetName)
   local playerData, playerName, playerRealm = self:GetPlayerData(targetName);
   self:LogDebug("playerData = " .. dump(playerData))
   if playerData then
-    self:LogDebug("WCLRanks:AddPlayerInfoToTooltip!!")
+    self:LogDebug("WCLRanksGehennas:AddPlayerInfoToTooltip!!")
     self:SetPlayerInfoTooltip(playerData, playerName, playerRealm);
   end
 end
 
-function WCLRanks:OnSlashCommand(cmd)
+function WCLRanksGehennas:OnSlashCommand(cmd)
   if not self.db.slashExtension then
     return;
   end
   if not cmd or cmd == ""  or cmd == "help" or cmd == "?" then
-    print("|cFFE5CC7F[WCLRanks]|r " .. "Shows player's WCL scores")
-    print("|cFFE5CC7F[WCLRanks]|r " .. "|cFFFFFF00/WCLRanks or /wr CHAR_NAME|r to query CHAR_NAME's score")
-    print("|cFFE5CC7F[WCLRanks]|r " .. "|cFFFFFF00/WCLRanks or /wr help|?|r to show this help")
+    print("|cFFE5CC7F[WCLRanksGehennas]|r " .. "Shows player's WCL scores")
+    print("|cFFE5CC7F[WCLRanksGehennas]|r " .. "|cFFFFFF00/WCLRanksGehennas or /wr CHAR_NAME|r to query CHAR_NAME's score")
+    print("|cFFE5CC7F[WCLRanksGehennas]|r " .. "|cFFFFFF00/WCLRanksGehennas or /wr help|?|r to show this help")
     return;
   end
   --self:LogOutput("OnSlashCommand", arguments);
@@ -304,7 +304,7 @@ function WCLRanks:OnSlashCommand(cmd)
   end
 end
 
-function WCLRanks:OnEvent(event, ...)
+function WCLRanksGehennas:OnEvent(event, ...)
   if (event == "ADDON_LOADED") then
     self:OnAddonLoaded(...);
   elseif (event == "CHAT_MSG_SYSTEM") then
@@ -323,24 +323,24 @@ function WCLRanks:OnEvent(event, ...)
   end
 end
 
-function WCLRanks:OnAddonLoaded(addonName)
-  if (addonName ~= "WCLRanks") then
+function WCLRanksGehennas:OnAddonLoaded(addonName)
+  if (addonName ~= "WCLRanks-Gehennas") then
     return;
   end
-  WCLRanksDB = WCLRanksDB or self.db;
-  self.db = WCLRanksDB;
+  WCLRanksGehennasDB = WCLRanksGehennasDB or self.db;
+  self.db = WCLRanksGehennasDB;
   -- Init options panel
   self:InitOptions();
   -- Register shlash command
   if self.db.slashExtension then
-    SLASH_LOGTRACKER1, SLASH_LOGTRACKER2 = '/wr', '/wclranks';
+    SLASH_LOGTRACKER1, SLASH_LOGTRACKER2 = '/wr', '/WCLRanksGehennas';
     SlashCmdList.LOGTRACKER = function(...)
-      WCLRanks:OnSlashCommand(...);
+      WCLRanksGehennas:OnSlashCommand(...);
     end
   end
 end
 
-function WCLRanks:OnChatMsgSystem(text)
+function WCLRanksGehennas:OnChatMsgSystem(text)
   if not self.db.chatExtension then
     return;
   end
@@ -353,7 +353,7 @@ function WCLRanks:OnChatMsgSystem(text)
   end
 end
 
-function WCLRanks:OnModifierStateChanged()
+function WCLRanksGehennas:OnModifierStateChanged()
   if not self.db.tooltipExtension then
     return;
   end
@@ -362,7 +362,7 @@ function WCLRanks:OnModifierStateChanged()
   end
 end
 
-function WCLRanks:OnTooltipSetUnit(tooltip, ...)
+function WCLRanksGehennas:OnTooltipSetUnit(tooltip, ...)
   if not self.db.tooltipExtension then
     return;
   end
@@ -382,7 +382,7 @@ function WCLRanks:OnTooltipSetUnit(tooltip, ...)
   end
 end
 
-function WCLRanks:IsTooltipLFGPlayer(tooltip)
+function WCLRanksGehennas:IsTooltipLFGPlayer(tooltip)
   if not self.db.lfgExtension then
     return false;
   end
@@ -393,13 +393,13 @@ function WCLRanks:IsTooltipLFGPlayer(tooltip)
   end
 end
 
-function WCLRanks:OnTooltipShow(tooltip, ...)
+function WCLRanksGehennas:OnTooltipShow(tooltip, ...)
   if self:IsTooltipLFGPlayer(tooltip) then
     self:OnTooltipShow_LFGPlayer(tooltip, ...);
   end
 end
 
-function WCLRanks:OnTooltipShow_LFGPlayer(tooltip, resultID)
+function WCLRanksGehennas:OnTooltipShow_LFGPlayer(tooltip, resultID)
   local logTargets = nil;
   local searchResultInfo = C_LFGList.GetSearchResultInfo(resultID);
   if #searchResultInfo.activityIDs > 0 then
@@ -457,7 +457,7 @@ function WCLRanks:OnTooltipShow_LFGPlayer(tooltip, resultID)
   tooltip:SetWidth( tooltip:GetWidth() + 32 );
 end
 
-function WCLRanks:OnTooltipShow_LFGMember(frame, logTargets)
+function WCLRanksGehennas:OnTooltipShow_LFGMember(frame, logTargets)
   if not frame.Logs then
     frame.Logs = frame:CreateFontString(nil, "ARTWORK", "GameFontNormal");
     frame.Logs:SetPoint("TOPLEFT", frame.Role, "TOPRIGHT", 32, -2)
@@ -471,47 +471,47 @@ function WCLRanks:OnTooltipShow_LFGMember(frame, logTargets)
   end
 end
 
-function WCLRanks:GetIconSized(iconTemplate, width, height)
+function WCLRanksGehennas:GetIconSized(iconTemplate, width, height)
   local iconString = gsub(gsub(iconTemplate, "%%w", width), "%%h", height);
   return "|T"..iconString.."|t";
 end
 
--- /script print(WCLRanks:GetClassIcon("Priest"))
--- /script print("\124TInterface/AddOns/WCLRanks/Icons/classes:36:36:0:0:256:512:180:216:36:72\124t")
+-- /script print(WCLRanksGehennas:GetClassIcon("Priest"))
+-- /script print("\124TInterface/AddOns/WCLRanksGehennas/Icons/classes:36:36:0:0:256:512:180:216:36:72\124t")
 -- /script print("\124TInterface/InventoryItems/WoWUnknownItem01\124t")
-function WCLRanks:GetClassIcon(classNameOrId, width, height)
+function WCLRanksGehennas:GetClassIcon(classNameOrId, width, height)
   if not width then
     width = 14;
   end
   if not height then
     height = 14;
   end
-  --local addonLoaded = LoadAddOn("WCLRanks_BaseData");
-  --if not addonLoaded or not WCLRanks_BaseData or not WCLRanks_BaseData.classes or not WCLRanks_BaseData.classes[classNameOrId] then
+  --local addonLoaded = LoadAddOn("WCLRanksGehennas_BaseData");
+  --if not addonLoaded or not WCLRanksGehennas_BaseData or not WCLRanksGehennas_BaseData.classes or not WCLRanksGehennas_BaseData.classes[classNameOrId] then
   --  return self:GetIconSized("Interface/InventoryItems/WoWUnknownItem01:%w:%h", width, height);
   --end
-  local classData = WCLRanks_BaseData.classes[classNameOrId];
+  local classData = WCLRanksGehennas_BaseData.classes[classNameOrId];
   return self:GetIconSized(classData.icon, width, height);
 end
 
-function WCLRanks:GetSpecIcon(classNameOrId, specNameOrId, width, height)
+function WCLRanksGehennas:GetSpecIcon(classNameOrId, specNameOrId, width, height)
   if not width then
     width = 14;
   end
   if not height then
     height = 14;
   end
-  --local addonLoaded = LoadAddOn("WCLRanks_BaseData");
-  --if not addonLoaded or not WCLRanks_BaseData or not WCLRanks_BaseData.classes or not WCLRanks_BaseData.classes[classNameOrId]
-  --    or not WCLRanks_BaseData.classes[classNameOrId].specs or not WCLRanks_BaseData.classes[classNameOrId].specs[specNameOrId] then
+  --local addonLoaded = LoadAddOn("WCLRanksGehennas_BaseData");
+  --if not addonLoaded or not WCLRanksGehennas_BaseData or not WCLRanksGehennas_BaseData.classes or not WCLRanksGehennas_BaseData.classes[classNameOrId]
+  --    or not WCLRanksGehennas_BaseData.classes[classNameOrId].specs or not WCLRanksGehennas_BaseData.classes[classNameOrId].specs[specNameOrId] then
   --  return self:GetIconSized("Interface/InventoryItems/WoWUnknownItem01:%w:%h", width, height);
   --end
-  local classData = WCLRanks_BaseData.classes[classNameOrId];
+  local classData = WCLRanksGehennas_BaseData.classes[classNameOrId];
   local specData = classData.specs[specNameOrId];
   return self:GetIconSized(specData.icon, width, height);
 end
 
-function WCLRanks:GetColoredText(type, text)
+function WCLRanksGehennas:GetColoredText(type, text)
   if (type == "zone") then
     return "|cffdd60ff"..text.."|r";
   elseif (type == "spec") then
@@ -525,7 +525,7 @@ function WCLRanks:GetColoredText(type, text)
   end
 end
 
-function WCLRanks:GetColoredProgress(done, overall)
+function WCLRanksGehennas:GetColoredProgress(done, overall)
   if (done == 0) then
     return "|cffd00000"..done.."/"..overall.."|r";
   elseif (done < overall) then
@@ -535,7 +535,7 @@ function WCLRanks:GetColoredProgress(done, overall)
   end
 end
 
-function WCLRanks:GetColoredPercent(value, text)
+function WCLRanksGehennas:GetColoredPercent(value, text)
   value = floor(value);
   if (value >= 100) then
     return "|cFFE5CC80"..text.."|r";
@@ -556,11 +556,11 @@ function WCLRanks:GetColoredPercent(value, text)
   end
 end
 
-function WCLRanks:GetPlayerLink(playerName)
+function WCLRanksGehennas:GetPlayerLink(playerName)
   return self:GetColoredText("player", "|Hplayer:"..playerName.."|h["..playerName.."]|h");
 end
 
-function WCLRanks:GetPlayerData(playerFull, realmNameExplicit)
+function WCLRanksGehennas:GetPlayerData(playerFull, realmNameExplicit)
   local playerName, realmName = strsplit("_", playerFull);
   if not realmName then
     if not realmNameExplicit or (realmNameExplicit == "") then
@@ -594,8 +594,8 @@ function WCLRanks:GetPlayerData(playerFull, realmNameExplicit)
         self:LogDebug("zoneId = " .. zoneId .. ", zoneSize = " .. zoneSize)
         -- Zone name
         local zoneName = "Unknown ("..zoneSize..")";
-        if WCLRanks_BaseData.zoneNames and WCLRanks_BaseData.zoneNames[zoneId] then
-          zoneName = WCLRanks_BaseData.zoneNames[zoneId]['name'].."("..zoneSize..")";
+        if WCLRanksGehennas_BaseData.zoneNames and WCLRanksGehennas_BaseData.zoneNames[zoneId] then
+          zoneName = WCLRanksGehennas_BaseData.zoneNames[zoneId]['name'].."("..zoneSize..")";
         end
         self:LogDebug("zoneName = " .. zoneName)
         -- Allstars rankings {A,1,703.76,47.53,153,944,56202} (color, spec_id, points, rank_percent, server_rank, region_rank, rank)
@@ -628,7 +628,7 @@ function WCLRanks:GetPlayerData(playerFull, realmNameExplicit)
             end
             tinsert(zoneEncounters, {
               ['spec'] = tonumber(zoneEncountersRaw[1]),
-              ['encounter'] = WCLRanks_BaseData.zoneEncounters[zoneId][zoneEncounterIndex],
+              ['encounter'] = WCLRanksGehennas_BaseData.zoneEncounters[zoneId][zoneEncounterIndex],
               ['points'] = zoneEncountersRaw[2],
               ['percentRank'] = zoneEncountersRaw[3],
               ['serverRank'] = zoneEncountersRaw[4],
@@ -657,7 +657,7 @@ function WCLRanks:GetPlayerData(playerFull, realmNameExplicit)
   return characterData, playerName, realmName;
 end
 
-function WCLRanks:GetPlayerOverallPerformance(playerData, logTargets)
+function WCLRanksGehennas:GetPlayerOverallPerformance(playerData, logTargets)
   local logScoreValue = 0;
   local logScoreCount = 0;
   for zoneId, zoneData in pairs(playerData['performance']) do
@@ -681,7 +681,7 @@ function WCLRanks:GetPlayerOverallPerformance(playerData, logTargets)
   end
 end
 
-function WCLRanks:GetPlayerZonePerformance(zone, playerClass)
+function WCLRanksGehennas:GetPlayerZonePerformance(zone, playerClass)
   local zoneName = zone.zoneName;
   local zoneProgress = self:GetColoredProgress(tonumber(zone.encountersKilled), tonumber(zone.zoneEncounters));
   local zoneRatingsStr = "";
@@ -705,7 +705,7 @@ function WCLRanks:GetPlayerZonePerformance(zone, playerClass)
   return self:GetColoredText("zone", zoneName), self:GetColoredText("progress", zoneProgress), zoneRatingsStr;
 end
 
-function WCLRanks:GetPlayerEncounterPerformance(encounter, playerClass, reversed)
+function WCLRanksGehennas:GetPlayerEncounterPerformance(encounter, playerClass, reversed)
   local encounterName = encounter.encounter.name;
   if (encounter.spec == 0) then
     return self:GetColoredText("encounter", encounterName), "---";
@@ -719,7 +719,7 @@ function WCLRanks:GetPlayerEncounterPerformance(encounter, playerClass, reversed
   return self:GetColoredText("encounter", encounterName), encounterRating;
 end
 
-function WCLRanks:SendSystemChatLine(text)
+function WCLRanksGehennas:SendSystemChatLine(text)
   local chatInfo = ChatTypeInfo["SYSTEM"];
   local i;
   for i=1, 16 do
@@ -730,7 +730,7 @@ function WCLRanks:SendSystemChatLine(text)
   end
 end
 
-function WCLRanks:SendPlayerInfoToChat(playerData, playerName, playerRealm, showEncounters)
+function WCLRanksGehennas:SendPlayerInfoToChat(playerData, playerName, playerRealm, showEncounters)
   for zoneId, zone in pairs(playerData.performance) do
     local zoneName, zoneProgress, zoneSpecs = self:GetPlayerZonePerformance(zone, playerData.class);
     self:SendSystemChatLine( self:GetPlayerLink(playerName).." "..strjoin(" ", self:GetPlayerZonePerformance(zone, playerData.class)) );
@@ -744,8 +744,8 @@ function WCLRanks:SendPlayerInfoToChat(playerData, playerName, playerRealm, show
   self:SendSystemChatLine(L["DATE_UPDATE"]..": "..date(L["DATE_FORMAT"], playerData.last_update));
 end
 
-function WCLRanks:SetPlayerInfoTooltip(playerData, playerName, playerRealm, disableShiftNotice)
-  self:LogDebug("WCLRanks:SetPlayerInfoTooltip")
+function WCLRanksGehennas:SetPlayerInfoTooltip(playerData, playerName, playerRealm, disableShiftNotice)
+  self:LogDebug("WCLRanksGehennas:SetPlayerInfoTooltip")
   for zoneIdSize, zone in pairs(playerData.performance) do
     local zoneId, zoneSize = strsplit("_", zoneIdSize);
     local zoneName, zoneProgress, zoneSpecs = self:GetPlayerZonePerformance(zone, playerData.class);
@@ -779,4 +779,4 @@ function WCLRanks:SetPlayerInfoTooltip(playerData, playerName, playerRealm, disa
 end
 
 -- Kickstart the addon
-WCLRanks:Init();
+WCLRanksGehennas:Init();

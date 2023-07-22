@@ -1,5 +1,8 @@
-package-as: WCLRanks
+package-as: WCLRanks-Gehennas
 
 ignore:
     - README.md
-
+    - server/
+    - config.py
+    - wcl_ant.py
+    - bump_version.py
