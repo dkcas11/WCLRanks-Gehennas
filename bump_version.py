@@ -24,6 +24,6 @@ with open("WCLRanks-Gehennas.toc.old") as fp:
 toc.close()
 
 ret = getoutput("git add Data/")
-ret = getoutput("git commit -m \"Daily update: %s\"", date_version)
-ret = getoutput("git tag WCLRanks-Gehennas-%s", version)
+ret = getoutput("git commit -m \"Daily update: %s\"" % date_version)
+ret = getoutput("git tag WCLRanks-Gehennas-%s" % version)
 ret = getoutput("git push origin main")
