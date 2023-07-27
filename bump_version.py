@@ -4,6 +4,8 @@ import os
 import datetime
 from subprocess                         import getoutput
 
+print("Bumping")
+
 version = ""
 date_version = datetime.date.today().strftime("%Y%m%d")
 
