@@ -23,7 +23,13 @@ with open("WCLRanks-Gehennas.toc.old") as fp:
         line = fp.readline()
 toc.close()
 
+print("Version: ", version)
+
 ret = getoutput("git add Data/")
+print(ret)
 ret = getoutput("git commit -m \"Daily update: %s\"" % date_version)
+print(ret)
 ret = getoutput("git tag WCLRanks-Gehennas-%s" % version)
+print(ret)
 ret = getoutput("git push origin main")
+print(ret)
