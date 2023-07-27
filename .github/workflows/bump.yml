@@ -1,4 +1,4 @@
-name: Update DB
+name: Bump Version
 
 on:
   workflow_dispatch:
@@ -17,6 +17,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - uses: fregante/setup-git-user@v2
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
       with:
