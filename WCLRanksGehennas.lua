@@ -23,7 +23,7 @@ end
 function WCLRanksGehennas:Init()
   self.debug = false;
   self.defaults = {
-    chatExtension = true,
+    chatExtension = false,
     tooltipExtension = true,
     slashExtension = true,
     showDuringCombat = false,
