@@ -8,7 +8,7 @@ server_data = {
     "5026": {
         "name" : "Gehennas",
         "userlist" : [],
-        "guildlist": ["Nine Nine GDKP"]
+        "guildlist": ["Nine Nine"]
     }
 }
 
