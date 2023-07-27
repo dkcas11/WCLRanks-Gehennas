@@ -20,8 +20,12 @@ data = {'grant_type': 'client_credentials'}
 access_token_response = requests.post(token_url, data=data, verify=False, allow_redirects=False, auth=(client_id, client_secret))
 
 # we can now use the access_token as much as we want to access protected resources.
-tokens = json.loads(access_token_response.text)
-access_token = tokens['access_token']
+token = json.loads(access_token_response.text)
+print("============")
+print(access_token_response)
+print(token)
+print("============")
+access_token = token['access_token']
 #print("access token: %s" % access_token)
 
 servers = [f for f in os.listdir('server') if not os.path.isfile(os.path.join("server", f))]
@@ -37,80 +41,80 @@ def get_spec_id(class_id, spec):
     classes = {
         1:{
             'specs':{
-                'Blood':{'id':'1','name':'Blood','slug':'Blood','icon':'Interface/AddOns/WCLRanks/Icons/classes:%w:%h:0:0:256:512:36:72:144:180'},
-                'Frost':{'id':'2','name':'Frost','slug':'Frost','icon':'Interface/AddOns/WCLRanks/Icons/classes:%w:%h:0:0:256:512:72:108:144:180'},
-                'Unholy':{'id':'3','name':'Unholy','slug':'Unholy','icon':'Interface/AddOns/WCLRanks/Icons/classes:%w:%h:0:0:256:512:108:144:144:180'},
-                'Lichborne':{'id':'4','name':'Lichborne','slug':'Lichborne','icon':'Interface/AddOns/WCLRanks/Icons/classes:%w:%h:0:0:256:512:72:108:144:180'},
-                'Runeblade':{'id':'5','name':'Runeblade','slug':'Runeblade','icon':'Interface/AddOns/WCLRanks/Icons/classes:%w:%h:0:0:256:512:36:72:144:180'},
-                'BloodDPS':{'id':'6','name':'Blood','slug':'Blood','icon':'Interface/AddOns/WCLRanks/Icons/classes:%w:%h:0:0:256:512:36:72:144:180'}
+                'Blood':{'id':'1','name':'Blood','slug':'Blood'},
+                'Frost':{'id':'2','name':'Frost','slug':'Frost'},
+                'Unholy':{'id':'3','name':'Unholy','slug':'Unholy'},
+                'Lichborne':{'id':'4','name':'Lichborne','slug':'Lichborne'},
+                'Runeblade':{'id':'5','name':'Runeblade','slug':'Runeblade'},
+                'BloodDPS':{'id':'6','name':'Blood','slug':'Blood'}
             }
         },
         2:{
             'specs':{
-                'Balance':{'id':'1','name':'Balance','slug':'Balance','icon':'Interface/AddOns/LogTracker/Icons/classes:%w:%h:0:0:256:512:36:72:36:72'},
-                'Feral':{'id':'2','name':'Feral','slug':'Feral','icon':'Interface/AddOns/LogTracker/Icons/classes:%w:%h:0:0:256:512:72:108:36:72'},
-                'Guardian':{'id':'3','name':'Guardian','slug':'Guardian','icon':'Interface/AddOns/LogTracker/Icons/classes:%w:%h:0:0:256:512:108:144:36:72'},
-                'Restoration':{'id':'4','name':'Restoration','slug':'Restoration','icon':'Interface/AddOns/LogTracker/Icons/classes:%w:%h:0:0:256:512:144:180:36:72'},
-                'Warden':{'id':'5','name':'Warden','slug':'Warden','icon':'Interface/AddOns/LogTracker/Icons/classes:%w:%h:0:0:256:512:180:216:36:72'}
+                'Balance':{'id':'1','name':'Balance','slug':'Balance'},
+                'Feral':{'id':'2','name':'Feral','slug':'Feral'},
+                'Guardian':{'id':'3','name':'Guardian','slug':'Guardian'},
+                'Restoration':{'id':'4','name':'Restoration','slug':'Restoration'},
+                'Warden':{'id':'5','name':'Warden','slug':'Warden'}
             }
         },
 		3:{
             'specs':{
-                'BeastMastery':{'id':'1','name':'Beast Mastery','slug':'BeastMastery','icon':'Interface/AddOns/LogTracker/Icons/classes:%w:%h:0:0:256:512:36:72:72:108'},
-                'Marksmanship':{'id':'2','name':'Marksmanship','slug':'Marksmanship','icon':'Interface/AddOns/LogTracker/Icons/classes:%w:%h:0:0:256:512:72:108:72:108'},
-                'Survival':{'id':'3','name':'Survival','slug':'Survival','icon':'Interface/AddOns/LogTracker/Icons/classes:%w:%h:0:0:256:512:108:144:72:108'}
+                'BeastMastery':{'id':'1','name':'Beast Mastery','slug':'BeastMastery'},
+                'Marksmanship':{'id':'2','name':'Marksmanship','slug':'Marksmanship'},
+                'Survival':{'id':'3','name':'Survival','slug':'Survival'}
             }
         },
         4:{
             'specs':{
-                'Arcane':{'id':'1','name':'Arcane','slug':'Arcane','icon':'Interface/AddOns/LogTracker/Icons/classes:%w:%h:0:0:256:512:36:72:108:144'},
-                'Fire':{'id':'2','name':'Fire','slug':'Fire','icon':'Interface/AddOns/LogTracker/Icons/classes:%w:%h:0:0:256:512:72:108:108:144'},
-                'Frost':{'id':'3','name':'Frost','slug':'Frost','icon':'Interface/AddOns/LogTracker/Icons/classes:%w:%h:0:0:256:512:108:144:108:144'}
+                'Arcane':{'id':'1','name':'Arcane','slug':'Arcane'},
+                'Fire':{'id':'2','name':'Fire','slug':'Fire'},
+                'Frost':{'id':'3','name':'Frost','slug':'Frost'}
             }
         },
         6:{
             'specs':{
-                'Holy':{'id':'1','name':'Holy','slug':'Holy','icon':'Interface/AddOns/LogTracker/Icons/classes:%w:%h:0:0:256:512:36:72:180:216'},
-                'Protection':{'id':'2','name':'Protection','slug':'Protection','icon':'Interface/AddOns/LogTracker/Icons/classes:%w:%h:0:0:256:512:72:108:180:216'},
-                'Retribution':{'id':'3','name':'Retribution','slug':'Retribution','icon':'Interface/AddOns/LogTracker/Icons/classes:%w:%h:0:0:256:512:108:144:180:216'},
-                'Justicar':{'id':'4','name':'Justicar','slug':'Justicar','icon':'Interface/AddOns/LogTracker/Icons/classes:%w:%h:0:0:256:512:144:180:180:216'}
+                'Holy':{'id':'1','name':'Holy','slug':'Holy'},
+                'Protection':{'id':'2','name':'Protection','slug':'Protection'},
+                'Retribution':{'id':'3','name':'Retribution','slug':'Retribution'},
+                'Justicar':{'id':'4','name':'Justicar','slug':'Justicar'}
             }
         },
         7:{
             'specs':{
-                'Discipline':{'id':'1','name':'Discipline','slug':'Discipline','icon':'Interface/AddOns/LogTracker/Icons/classes:%w:%h:0:0:256:512:36:72:216:252'},
-                'Holy':{'id':'2','name':'Holy','slug':'Holy','icon':'Interface/AddOns/LogTracker/Icons/classes:%w:%h:0:0:256:512:72:108:216:252'},
-                'Shadow':{'id':'3','name':'Shadow','slug':'Shadow','icon':'Interface/AddOns/LogTracker/Icons/classes:%w:%h:0:0:256:512:108:144:216:252'}
+                'Discipline':{'id':'1','name':'Discipline','slug':'Discipline'},
+                'Holy':{'id':'2','name':'Holy','slug':'Holy'},
+                'Shadow':{'id':'3','name':'Shadow','slug':'Shadow'}
             }
         },
         8:{
              'specs':{
-                 'Assassination':{'id':'1','name':'Assassination','slug':'Assassination','icon':'Interface/AddOns/LogTracker/Icons/classes:%w:%h:0:0:256:512:36:72:252:288'},
-                 'Combat':{'id':'2','name':'Combat','slug':'Combat','icon':'Interface/AddOns/LogTracker/Icons/classes:%w:%h:0:0:256:512:72:108:252:288'},
-                 'Subtlety':{'id':'3','name':'Subtlety','slug':'Subtlety','icon':'Interface/AddOns/LogTracker/Icons/classes:%w:%h:0:0:256:512:108:144:252:288'}
+                 'Assassination':{'id':'1','name':'Assassination','slug':'Assassination'},
+                 'Combat':{'id':'2','name':'Combat','slug':'Combat'},
+                 'Subtlety':{'id':'3','name':'Subtlety','slug':'Subtlety'}
             }
         },
         9:{
             'specs':{
-                 'Elemental':{'id':'1','name':'Elemental','slug':'Elemental','icon':'Interface/AddOns/LogTracker/Icons/classes:%w:%h:0:0:256:512:36:72:288:324'},
-                 'Enhancement':{'id':'2','name':'Enhancement','slug':'Enhancement','icon':'Interface/AddOns/LogTracker/Icons/classes:%w:%h:0:0:256:512:72:108:288:324'},
-                 'Restoration':{'id':'3','name':'Restoration','slug':'Restoration','icon':'Interface/AddOns/LogTracker/Icons/classes:%w:%h:0:0:256:512:108:144:288:324'}
+                 'Elemental':{'id':'1','name':'Elemental','slug':'Elemental'},
+                 'Enhancement':{'id':'2','name':'Enhancement','slug':'Enhancement'},
+                 'Restoration':{'id':'3','name':'Restoration','slug':'Restoration'}
             }
         },
         10:{
             'specs':{
-                 'Affliction':{'id':'1','name':'Affliction','slug':'Affliction','icon':'Interface/AddOns/LogTracker/Icons/classes:%w:%h:0:0:256:512:36:72:324:360'},
-                 'Demonology':{'id':'2','name':'Demonology','slug':'Demonology','icon':'Interface/AddOns/LogTracker/Icons/classes:%w:%h:0:0:256:512:72:108:324:360'},
-                 'Destruction':{'id':'3','name':'Destruction','slug':'Destruction','icon':'Interface/AddOns/LogTracker/Icons/classes:%w:%h:0:0:256:512:108:144:324:360'}
+                 'Affliction':{'id':'1','name':'Affliction','slug':'Affliction'},
+                 'Demonology':{'id':'2','name':'Demonology','slug':'Demonology'},
+                 'Destruction':{'id':'3','name':'Destruction','slug':'Destruction'}
             }
         },
         11:{
             'specs':{
-                'Arms':{'id':'1','name':'Arms','slug':'Arms','icon':'Interface/AddOns/WCLRanks/Icons/classes:%w:%h:0:0:256:512:36:72:360:396'},
-                'Fury':{'id':'2','name':'Fury','slug':'Fury','icon':'Interface/AddOns/WCLRanks/Icons/classes:%w:%h:0:0:256:512:72:108:360:396'},
-                'Protection':{'id':'3','name':'Protection','slug':'Protection','icon':'Interface/AddOns/WCLRanks/Icons/classes:%w:%h:0:0:256:512:108:144:360:396'},
-                'Gladiator':{'id':'4','name':'Gladiator','slug':'Gladiator','icon':'Interface/AddOns/WCLRanks/Icons/classes:%w:%h:0:0:256:512:144:180:360:396'},
-                'Champion':{'id':'5','name':'Champion','slug':'Champion','icon':'Interface/AddOns/WCLRanks/Icons/classes:%w:%h:0:0:256:512:180:216:360:396'}
+                'Arms':{'id':'1','name':'Arms','slug':'Arms'},
+                'Fury':{'id':'2','name':'Fury','slug':'Fury'},
+                'Protection':{'id':'3','name':'Protection','slug':'Protection'},
+                'Gladiator':{'id':'4','name':'Gladiator','slug':'Gladiator'},
+                'Champion':{'id':'5','name':'Champion','slug':'Champion'}
             },
         },
     }
@@ -348,7 +352,7 @@ def update_userdata(server_id, server_name, usernames):
 
         query = gen_query_user(server_name, usernames[idx:end], userdata)
         idx += step
-        print("query = %s" % query)
+        # print("query = %s" % query)
         result = wcl_query(query)
         result = result.replace("Noclasssetforthischaracter.ClicktheUpdatebuttonintheupperrighttoestablishaclass.", "")
         result = result.replace("No class set for this character. Click the Update button in the upper right to establish a class.", "")
@@ -364,28 +368,8 @@ def update_userdata(server_id, server_name, usernames):
 
         msg = ""
         for key, user in user_data.items():
-            #print("user = %s" % user)
-            try:
-                class_id = user["classID"]
-                if class_id == 0:
-                    for classs in classes:
-                        if spec in classes[classs]['specs']:
-                            # found possible class
-                            if class_id == 0:
-                                class_id = classs
-                            else: # not an uniq spec name, can't determinate the class
-                                class_id = 0
-                                break
-                # can't determinate the class
-                if class_id == 0:
-                    continue
-            except:
-                print("============ Error ============")
-                print(user)
-                continue
-
+            class_id = user["classID"]
             list_str = ""
-            msg += "\n[\"%s\"] =\"" % (user["name"])
             for zone in zones:
                 for size in ["10", "25"]:
                     zone_str = ""
@@ -416,8 +400,8 @@ def update_userdata(server_id, server_name, usernames):
             if list_str:
                 now = int(datetime.datetime.now().timestamp())
                 userdata[user["name"]] = "{%s, %s, {%s}}" % (class_id, now, list_str)
+                msg += "\n[\"%s\"] = %s" % (user["name"], userdata[user["name"]])
 
-                msg += userdata[user["name"]]
             write_target(server_name, "%s.lua" % server_id, userdata)
         msg += "\n"
         print("==========================================")
