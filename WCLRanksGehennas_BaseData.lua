@@ -1,4 +1,4 @@
-WCLRanks_BaseData = {
+WCLRanksGehennas_BaseData = {
 	['classes']={
 		[1]={
 			['id']='1',
